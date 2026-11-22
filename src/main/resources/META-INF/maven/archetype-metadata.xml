@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="microservicio-arquetipo">
+
+    <requiredProperties>
+        <requiredProperty key="groupId">
+            <defaultValue>com.duoc</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="version">
+            <defaultValue>1.0.0</defaultValue>
+        </requiredProperty>
+        <!-- Prefijo de la clase principal: Moderacion -> ModeracionApplication -->
+        <requiredProperty key="nombreClase">
+            <defaultValue>Microservicio</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="puerto">
+            <defaultValue>8080</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="descripcion">
+            <defaultValue>Microservicio del Sistema de Foros en Linea</defaultValue>
+        </requiredProperty>
+        <!-- El plugin descarta los .gitignore: se guarda como __gitignore__ y se renombra al generar -->
+        <requiredProperty key="gitignore">
+            <defaultValue>.gitignore</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/main/java</directory>
+            <includes><include>**/*.java</include></includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/resources</directory>
+            <includes><include>**/*</include></includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>README.md</include>
+                <include>Dockerfile</include>
+                <include>db.properties.example</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>__gitignore__</include>
+                <include>.dockerignore</include>
+                <include>mvnw</include>
+                <include>mvnw.cmd</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>.mvn</directory>
+            <includes><include>**/*</include></includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>.github</directory>
+            <includes><include>**/*</include></includes>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>
