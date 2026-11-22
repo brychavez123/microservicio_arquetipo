@@ -26,6 +26,9 @@
         <requiredProperty key="gitignore">
             <defaultValue>.gitignore</defaultValue>
         </requiredProperty>
+        <requiredProperty key="gitattributes">
+            <defaultValue>.gitattributes</defaultValue>
+        </requiredProperty>
     </requiredProperties>
 
     <fileSets>
@@ -50,6 +53,7 @@
             <includes>
                 <include>__gitignore__</include>
                 <include>.dockerignore</include>
+                <include>__gitattributes__</include>
                 <include>mvnw</include>
                 <include>mvnw.cmd</include>
             </includes>
