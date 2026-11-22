@@ -27,3 +27,6 @@ $h$h Docker
 docker build -t ${artifactId} .
 docker run -p ${puerto}:${puerto} --env-file db.properties -e DB_WALLET_PATH=/app/wallet -v ./Wallet_NOMBRE:/app/wallet:ro ${artifactId}
 ```
+
+$h$h Despliegue en AWS
+`.github/workflows/deploy-aws.yml` publica la imagen en Amazon ECR y la despliega en EC2 (Systems Manager) en cada push a `main`. Puerto y nombre en `aws/servicio.env`.

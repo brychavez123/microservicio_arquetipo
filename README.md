@@ -17,7 +17,7 @@ Así los 3 microservicios comparten la misma arquitectura, configuración y buen
 | Seguridad | HTTP Basic + BCrypt contra la tabla `USUARIO` compartida, sin estado, CORS configurable |
 | `application.properties` | Oracle Cloud con Wallet, credenciales por `db.properties` o variables de entorno |
 | `Dockerfile` | Multi-etapa (Maven → JRE Alpine), usuario sin privilegios y healthcheck |
-| `.github/workflows/docker-publish.yml` | Publica la imagen en Docker Hub en cada push a `main` |
+| `.github/workflows/deploy-aws.yml` + `aws/` | En cada push a `main`: tests, imagen en Amazon ECR y despliegue en EC2 por Systems Manager (Wallet desde S3, credenciales desde Secrets Manager) |
 | `.gitignore` / `.dockerignore` | El Wallet y `db.properties` nunca se suben |
 | `mvnw` | Maven Wrapper |
 

@@ -62,5 +62,13 @@
             <directory>.github</directory>
             <includes><include>**/*</include></includes>
         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>aws</directory>
+            <includes><include>servicio.env</include></includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>aws</directory>
+            <includes><include>deploy-ec2.sh</include></includes>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>
